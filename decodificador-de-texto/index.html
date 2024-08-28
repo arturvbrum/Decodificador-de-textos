@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador de textos</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="conteudo">
+        <div class="digitacao">
+            <div class="logo">Decodificador de texto</div>
+            <h2>Digite seu texto</h2>
+            <textarea id="inputText" placeholder="Digite o texto aqui..."></textarea>
+            <div class="buttons">
+                <button id="encodeButton">Criptografar</button>
+                <button id="decodeButton">Descriptografar</button>
+            </div>
+            <p class="note">* Apenas letras minúsculas e sem acento.</p>
+        </div>
+        <div class="traducao">
+            <div class="messagem">
+                <img class="lupa" src="./assets/High quality products 1 1.png" alt="Nenhuma mensagem encontrada">
+                <p class="no-message">Nenhuma mensagem encontrada</p>
+                <p class="instruction">Digite um texto que você deseja criptografar ou descriptografar.</p>
+            </div>
+            <textarea id="outputText" placeholder="Resultado..."></textarea>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("encodeButton").addEventListener("click", function() {
+            let text = document.getElementById("inputText").value;
+            let encodedText = text
+                .replace(/e/g, "enter")
+                .replace(/i/g, "imes")
+                .replace(/a/g, "ai")
+                .replace(/o/g, "ober")
+                .replace(/u/g, "ufat");
+            document.getElementById("outputText").value = encodedText;
+        });
+
+        document.getElementById("decodeButton").addEventListener("click", function() {
+            let text = document.getElementById("inputText").value;
+            let decodedText = text
+                .replace(/enter/g, "e")
+                .replace(/imes/g, "i")
+                .replace(/ai/g, "a")
+                .replace(/ober/g, "o")
+                .replace(/ufat/g, "u");
+            document.getElementById("outputText").value = decodedText;
+        });
+    </script> 
+</body>
+    
+    
+</html>
